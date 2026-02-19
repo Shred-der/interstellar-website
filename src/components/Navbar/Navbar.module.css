@@ -1,0 +1,81 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    .header {
+        padding: 1.5rem 5rem;
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo span {
+    color: var(--color-primary);
+    font-size: 1.875rem;
+}
+
+.logoText {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text-main);
+}
+
+.links {
+    display: none;
+    align-items: center;
+    gap: 3rem;
+}
+
+@media (min-width: 768px) {
+    .links {
+        display: flex;
+    }
+}
+
+.link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-dim);
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: var(--color-primary);
+}
+
+.exploreBtn {
+    background: var(--color-primary);
+    color: var(--color-text-dark);
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.25rem;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.exploreBtn:hover {
+    background: rgba(249, 212, 6, 0.9);
+}

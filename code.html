@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>INTERSTELLAR | Beyond the Horizon</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        window.addEventListener('scroll', () => {
+            const parallax = document.getElementById('parallax-bg');
+            const img = parallax.querySelector('img');
+            const scrollPosition = window.pageYOffset;
+            const viewportHeight = window.innerHeight;
+            
+            // Calculate progress of scroll relative to first section
+            // Zoom effect happens over the first 100vh
+            const progress = Math.min(scrollPosition / viewportHeight, 1.5);
+            
+            // Scale from 1 to 3
+            const scale = 1 + (progress * 2);
+            // Opacity from 1 to 0
+            const opacity = Math.max(1 - (progress * 1.2), 0);
+            
+            if (img) {
+                img.style.transform = `scale(${scale})`;
+                img.style.opacity = opacity;
+            }
+            
+            // Subtle parallax for the container itself if needed, or keep it fixed
+            // parallax.style.transform = 'translateY(' + scrollPosition * 0.1 + 'px)';
+        });
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0a0a0a;
+            color: #f8f8f5;
+        }
+        .glass-panel {
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(249, 212, 6, 0.1);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(249, 212, 6, 0.3);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(249, 212, 6, 0.5);
+        }
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(10,10,10,0.9) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-slate-100 font-display selection:bg-primary selection:text-background-dark">
+<!-- Background Video Simulation (Using an Image as specified, described for cinematic effect) -->
+<!-- Navigation -->
+<header class="fixed top-0 w-full z-50 px-6 lg:px-20 py-6">
+<nav class="flex items-center justify-between glass-panel px-8 py-4 rounded-xl border-white/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">flare</span>
+<span class="text-xl font-bold tracking-[0.2em] text-slate-100 uppercase">Interstellar</span>
+</div>
+<div class="hidden md:flex items-center gap-12">
+<a class="text-sm font-medium tracking-widest text-slate-300 hover:text-primary transition-colors uppercase" href="#">Mission</a>
+<a class="text-sm font-medium tracking-widest text-slate-300 hover:text-primary transition-colors uppercase" href="#">Data</a>
+<a class="text-sm font-medium tracking-widest text-slate-300 hover:text-primary transition-colors uppercase" href="#">Contact</a>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-background-dark px-6 py-2 rounded font-bold text-xs tracking-widest transition-all glow-hover uppercase">
+                Explore
+            </button>
+</nav>
+</header>
+<main class="relative z-10">
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20"><div class="fixed inset-0 z-0 overflow-hidden pointer-events-none" id="parallax-bg">
+<img alt="Cinematic black hole Gargantua" class="w-full h-full object-cover will-change-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR2kPmbCvDZsmcD2_O9p8-1z0CR2uZ_WvoqlzbxvgN7J9gKVtXhhSC1AwlhwAIvaZ4OHvxwFLWiCQsn0d4UJkBmSSWzmArzKbb0KKIPdP12zD_iUDp3rNesYzdSbu1HTIYSfjcAzqZ3ymF-hHjt7KZup67dr5CXaJrI7Iuvajn7pM-O1HuAP6sMmvgbA9gvZ-UoDBYQXxCS1nVaMn3CeiDBeeLdaZQGF0VXBJ1ij7Is5E7LvfS3uAz54RcxIVT0iz9MeJ4WWLcGyWW" style="transition: transform 0.1s ease-out, opacity 0.1s ease-out;"/>
+<div class="absolute inset-0 bg-black/40 bg-gradient-to-b from-transparent via-background-dark/20 to-background-dark"></div>
+</div>
+<div class="max-w-5xl space-y-8 relative z-10">
+<h2 class="text-primary font-medium tracking-[0.5em] text-sm md:text-base uppercase opacity-80 mb-4">Endurance Mission Phase 1</h2>
+<h1 class="text-5xl md:text-8xl font-bold tracking-[0.15em] text-slate-100 uppercase leading-none">
+                    Beyond <br/> The Horizon
+                </h1>
+<p class="text-lg md:text-2xl text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
+                    Humanity was born on Earth, it was never meant to die here.
+                </p>
+<div class="pt-10">
+<button class="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-background-dark transition-all duration-200 bg-primary rounded-lg focus:outline-none glow-hover uppercase tracking-[0.2em] text-sm">
+                        Explore Gargantua
+                    </button>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-50 z-10">
+<span class="text-[10px] tracking-[0.3em] uppercase">Initiate Descent</span>
+<div class="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent"></div>
+</div>
+</section>
+<!-- Mission Parameters -->
+<section class="py-24 px-6 lg:px-20 bg-background-dark/40 backdrop-blur-sm">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<h3 class="text-primary text-sm font-bold tracking-[0.3em] uppercase mb-2">Telemetry</h3>
+<h2 class="text-4xl font-bold text-slate-100 uppercase tracking-wider">Mission Parameters</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Data Card 1 -->
+<div class="glass-panel p-8 rounded-xl border-l-4 border-l-primary group hover:border-l-primary/100 transition-all">
+<span class="material-symbols-outlined text-primary mb-4 opacity-70 group-hover:opacity-100">schedule</span>
+<h4 class="text-slate-400 text-xs font-bold tracking-widest uppercase mb-1">Time Dilation</h4>
+<div class="text-3xl font-bold text-slate-100 mb-2">1h : 7y</div>
+<p class="text-slate-500 text-sm leading-relaxed">Relative to Earth standard timeline near event horizon.</p>
+</div>
+<!-- Data Card 2 -->
+<div class="glass-panel p-8 rounded-xl border-l-4 border-l-primary/30 group hover:border-l-primary/100 transition-all">
+<span class="material-symbols-outlined text-primary mb-4 opacity-70 group-hover:opacity-100">dynamic_form</span>
+<h4 class="text-slate-400 text-xs font-bold tracking-widest uppercase mb-1">Gravity</h4>
+<div class="text-3xl font-bold text-slate-100 mb-2">1.3M Gs</div>
+<p class="text-slate-500 text-sm leading-relaxed">Intense gravitational curvature detected in Sector 4.</p>
+</div>
+<!-- Data Card 3 -->
+<div class="glass-panel p-8 rounded-xl border-l-4 border-l-primary/30 group hover:border-l-primary/100 transition-all">
+<span class="material-symbols-outlined text-primary mb-4 opacity-70 group-hover:opacity-100">adjust</span>
+<h4 class="text-slate-400 text-xs font-bold tracking-widest uppercase mb-1">Singularity</h4>
+<div class="text-3xl font-bold text-slate-100 mb-2">98.4%</div>
+<p class="text-slate-500 text-sm leading-relaxed">Stability index of the wormhole connection point.</p>
+</div>
+<!-- Data Card 4 -->
+<div class="glass-panel p-8 rounded-xl border-l-4 border-l-primary/30 group hover:border-l-primary/100 transition-all">
+<span class="material-symbols-outlined text-primary mb-4 opacity-70 group-hover:opacity-100">radar</span>
+<h4 class="text-slate-400 text-xs font-bold tracking-widest uppercase mb-1">Horizon Radius</h4>
+<div class="text-3xl font-bold text-slate-100 mb-2">150M KM</div>
+<p class="text-slate-500 text-sm leading-relaxed">Safe distance threshold for Endurance orbit.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical View Section -->
+<section class="py-24 px-6 lg:px-20 border-t border-white/5">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+<div class="lg:w-1/2 space-y-6">
+<div class="inline-block px-3 py-1 rounded bg-primary/10 text-primary text-[10px] font-bold tracking-widest uppercase border border-primary/20">
+                        System Status: Operational
+                    </div>
+<h2 class="text-4xl font-bold text-slate-100 uppercase tracking-tight">The Lazarus Project</h2>
+<p class="text-slate-400 leading-relaxed text-lg font-light">
+                        Our scouts have already begun the descent. Miller, Edmunds, and Mann have sent back preliminary pings. The Endurance is ready to bridge the gap between our dying world and the next frontier.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-center gap-4 text-slate-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span>Cryogenic stabilization complete</span>
+</li>
+<li class="flex items-center gap-4 text-slate-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span>TARS and CASE logic arrays initialized</span>
+</li>
+<li class="flex items-center gap-4 text-slate-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span>Docking sequence confirmed</span>
+</li>
+</ul>
+</div>
+<div class="lg:w-1/2 relative">
+<div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full opacity-20"></div>
+<div class="relative rounded-2xl overflow-hidden border border-white/10 glass-panel">
+<img class="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-700" data-alt="Futuristic space station interior with glowing data screens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA58rIRT1mJznx4ekMnkiQMo1jaat8cerU7PjsslVMYJNXtl4-swBxvt3ScI-Qy0LtQOCeaRc7Yej38Kjmn4zGlTP_bTejVdez5ejCqd7uMg1KreoymROS1Y3fdYIurvHU0ZhFVjF5xreD3Z136RaPJtRqa-EFvVo4KLoqZhyQvNPr8z7oyHd9RjLnEan9ITOdbX8FDFVSNBpmVlTipwL_tZpfGBQJG8lHGAtVhJRGfRSmmeB_aG_ZWU0lTKdIXtGVRTP3Il4Xf6aLb"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="relative z-10 border-t border-white/5 py-12 px-6 lg:px-20 bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">flare</span>
+<span class="text-lg font-bold tracking-[0.2em] text-slate-100 uppercase">Endurance</span>
+</div>
+<div class="flex gap-8 text-slate-500 text-xs tracking-widest uppercase">
+<a class="hover:text-primary transition-colors" href="#">Privacy Protocol</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Descent</a>
+<a class="hover:text-primary transition-colors" href="#">NASA Logs</a>
+</div>
+<p class="text-[10px] text-slate-600 tracking-widest uppercase">
+                © 2024 Lazarus Project. For the survival of humanity.
+            </p>
+</div>
+</footer>
+<script>
+        window.addEventListener('scroll', () => {
+            const parallax = document.getElementById('parallax-bg');
+            const img = parallax.querySelector('img');
+            const scrollPosition = window.pageYOffset;
+            const viewportHeight = window.innerHeight;
+            
+            // Calculate progress of scroll relative to first section
+            // Zoom effect happens over the first 100vh
+            const progress = Math.min(scrollPosition / viewportHeight, 1.5);
+            
+            // Scale from 1 to 3
+            const scale = 1 + (progress * 2);
+            // Opacity from 1 to 0
+            const opacity = Math.max(1 - (progress * 1.2), 0);
+            
+            if (img) {
+                img.style.transform = `scale(${scale})`;
+                img.style.opacity = opacity;
+            }
+            
+            // Subtle parallax for the container itself if needed, or keep it fixed
+            // parallax.style.transform = 'translateY(' + scrollPosition * 0.1 + 'px)';
+        });
+    </script></body></html>
